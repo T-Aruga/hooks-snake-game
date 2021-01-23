@@ -1,11 +1,11 @@
 import React from 'react';
+import { defaultDifficulty, Difficulty } from '../constants';
 
-const Navigation = ({ length, difficulty = 3, onChangeDifficulty }) => {
-  const upVisibility = difficulty < 5 ? '' : 'is-hidden'
-  const downVisibility = difficulty > 1 ? '' : 'is-hidden'
+const Navigation = ({ length, difficulty = defaultDifficulty, onChangeDifficulty }) => {
+  const upVisiblity = difficulty < Difficulty.length ? '' : 'is-hidden'
+  const downVisibilty = difficulty > 1 ? '' : 'is-hidden'
   const onUpDifficulty = () => onChangeDifficulty(difficulty + 1)
   const onDownDifficulty = () => onChangeDifficulty(difficulty -1)
-
   return (
     <div className="navigation">
       <div className="navigation-item">
@@ -20,11 +20,11 @@ const Navigation = ({ length, difficulty = 3, onChangeDifficulty }) => {
           <span className="num-board">{difficulty}</span>
           <div className="difficulty-button-container">
             <div
-              className={`difficulty-button difficulty-up ${upVisibility}`}
+              className={`difficulty-button difficulty-up ${upVisiblity}`}
               onClick={onUpDifficulty}
             ></div>
             <div
-              className={`difficulty-button difficulty-down ${downVisibility}`}
+              className={`difficulty-button difficulty-down ${downVisibilty}`}
               onClick={onDownDifficulty}
             ></div>
           </div>
@@ -32,6 +32,6 @@ const Navigation = ({ length, difficulty = 3, onChangeDifficulty }) => {
       </div>
     </div>
   )
-}
+};
 
 export default Navigation;

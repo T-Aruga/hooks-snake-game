@@ -14,4 +14,4 @@ const Field = ({ fields }) => {
   );
 };
 
-export default Field;
+export default Field
